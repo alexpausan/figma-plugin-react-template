@@ -1,6 +1,6 @@
-import React from 'react';
-import * as Tabs from '@radix-ui/react-tabs';
-import './styles.css';
+import React from 'react'
+import * as Tabs from '@radix-ui/react-tabs'
+import './styles.css'
 
 const TabsDemo = () => (
   <Tabs.Root className="TabsRoot" defaultValue="tab1">
@@ -19,6 +19,6 @@ const TabsDemo = () => (
       <p className="Text">Settings</p>
     </Tabs.Content>
   </Tabs.Root>
-);
+)
 
-export default TabsDemo;
+export default TabsDemo

@@ -8,8 +8,10 @@ function App() {
     // This is how we read messages sent from the plugin controller
     window.onmessage = (event) => {
       const { type, message } = event.data.pluginMessage
-      if (type === 'create-rectangles') {
-        console.log(`Figma Says: ${message}`)
+
+      if (type === 'changed-selection') {
+        console.log(JSON.parse(message))
+        return
       }
     }
   }, [])
