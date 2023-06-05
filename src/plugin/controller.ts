@@ -3,6 +3,7 @@
 // full browser environment (see documentation).
 
 import { nodeToObject } from '@figma-plugin/helpers'
+import { getSimplifiedObject } from '../utils/utils'
 
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__, { width: 400, height: 500 })
@@ -26,7 +27,7 @@ const updateSelection = async () => {
 
   const payload = {
     type: 'figma',
-    data: selectedItem,
+    data: getSimplifiedObject(selectedItem),
   }
 
   const apiRequest = await fetch('http://localhost:3000/magic-layout', {
@@ -40,7 +41,7 @@ const updateSelection = async () => {
 
   const updatedLayout = await apiRequest.json()
 
-  console.log(updatedLayout)
+  console.log(updatedLayout?.[0])
 
   // figma.ui.postMessage({
   //   type: 'changed-selection',

@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('../other-plugins/figma-magic/node_modules/html-webpack-plugin/typings')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin')
 const path = require('path')
 const { DefinePlugin } = require('webpack')

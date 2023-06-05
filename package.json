@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "build": "webpack --mode=production",
-    "build:watch": "webpack --mode=development --watch",
+    "start": "webpack --mode=development --watch",
     "prettier:format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json}' "
   },
   "dependencies": {
@@ -20,7 +20,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-plugin": "^5.5.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
