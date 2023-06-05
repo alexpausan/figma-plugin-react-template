@@ -12,8 +12,7 @@ export const getSimplifiedObject = (node: any) => {
   return newNode
 }
 
-// @TODO: improve the function by excluding props that are empty or default
-function filterProperties(obj) {
+function filterProperties(obj: any) {
   const propsToKeep = obj.type === 'FRAME' ? COMMON_PROPS.concat(FRAME_PROPS) : COMMON_PROPS
 
   const newObj = {}
