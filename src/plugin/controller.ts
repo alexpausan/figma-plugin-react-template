@@ -19,6 +19,7 @@ figma.on('selectionchange', () => {
 const updateSelection = async () => {
   const selection = figma.currentPage.selection
 
+  console.log(selection)
   if (!selection.length || selection.length > 1) {
     return
   }

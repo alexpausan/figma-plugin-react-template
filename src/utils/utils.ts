@@ -17,7 +17,7 @@ function filterProperties(obj: any) {
 
   const newObj = {}
   for (const prop of propsToKeep) {
-    if (obj.hasOwnProperty(prop) && !(prop in DEFAULT_VALUES)) {
+    if (obj.hasOwnProperty(prop) && obj[prop] !== DEFAULT_VALUES[prop]) {
       newObj[prop] = obj[prop]
     }
   }
