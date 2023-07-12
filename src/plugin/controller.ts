@@ -19,7 +19,6 @@ figma.on('selectionchange', () => {
 const updateSelection = async () => {
   const selection = figma.currentPage.selection
 
-  console.log(selection)
   if (!selection.length || selection.length > 1) {
     return
   }
@@ -31,6 +30,8 @@ const updateSelection = async () => {
     data: getSimplifiedObject(selectedItem),
   }
 
+  console.log('selectedItem', payload.data)
+
   const apiRequest = await fetch('http://localhost:3000/magic-layout', {
     method: 'POST',
     headers: {
@@ -40,9 +41,12 @@ const updateSelection = async () => {
     body: JSON.stringify(payload),
   })
 
-  const updatedLayout = await apiRequest.json()
+  const serverResponse = await apiRequest.json()
 
-  console.log(updatedLayout?.[0])
+  console.log('serverResponse', serverResponse)
+
+  // if (updatedLayout && updatedLayout.length) {
+  // console.log('server', updatedLayout?.[0])
 
   // figma.ui.postMessage({
   //   type: 'changed-selection',
