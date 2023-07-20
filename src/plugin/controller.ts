@@ -43,7 +43,7 @@ const updateSelection = async () => {
 
   const serverResponse = await apiRequest.json()
 
-  console.log('serverResponse', serverResponse)
+  console.log('serverResponse', serverResponse[0])
 
   // if (updatedLayout && updatedLayout.length) {
   // console.log('server', updatedLayout?.[0])
