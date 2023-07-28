@@ -42,11 +42,14 @@ const updateSelection = async () => {
     body: JSON.stringify(payload),
   })
 
-  // @TODO: send the post message to the UI 
+  // @TODO: send the post message to the UI - done
 
   const serverResponse = await apiRequest.json()
+  
+  figma.ui.postMessage({ type: 'serverResponse', data: serverResponse });
 
   console.log('serverResponse', serverResponse)
+
   
   // if (updatedLayout && updatedLayout.length) {
   // console.log('server', updatedLayout?.[0])
