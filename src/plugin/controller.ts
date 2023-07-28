@@ -16,6 +16,7 @@ figma.on('selectionchange', () => {
   updateSelection()
 })
 
+
 const updateSelection = async () => {
   const selection = figma.currentPage.selection
 
@@ -41,18 +42,21 @@ const updateSelection = async () => {
     body: JSON.stringify(payload),
   })
 
+  // @TODO: send the post message to the UI 
+
   const serverResponse = await apiRequest.json()
 
   console.log('serverResponse', serverResponse)
-
+  
   // if (updatedLayout && updatedLayout.length) {
   // console.log('server', updatedLayout?.[0])
-
   // figma.ui.postMessage({
   //   type: 'changed-selection',
   //   message: JSON.stringify(updatedLayout),
   // })
 }
+
+
 
 function createSolidRectangles(count: number) {
   const nodes = []
